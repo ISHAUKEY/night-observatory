@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="The Night Observatory — a quiet digital space to explore the cosmos and plan your next night under the stars.">
+  <title>The Night Observatory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky-glow"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">✦</span> THE NIGHT OBSERVATORY</a>
+    <nav><a href="#explore">Explore</a><a href="#planner">Planner</a><a href="#moon">Moon watch</a><a href="#journal">Journal</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">A SMALL WINDOW INTO THE INFINITE</p>
+      <h1>Look a little<br><em>closer.</em></h1>
+      <p class="hero-copy">The universe is not as far away as it seems. Find something to wonder about, plan a night outside, and keep a record of what you discover.</p>
+      <a class="primary-link" href="#explore">Begin exploring <span>↗</span></a>
+      <div class="hero-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="planet"></div><span class="orbit-star star-a">✦</span><span class="orbit-star star-b">·</span><span class="orbit-star star-c">✧</span></div>
+      <div class="hero-foot"><span>EST. UNDER THE SAME SKY</span><span>01 / 04 — DISCOVER</span></div>
+    </section>
+    <section class="section" id="explore">
+      <div class="section-heading"><div><p class="eyebrow">01 — THE CELESTIAL INDEX</p><h2>Explore the <em>universe.</em></h2></div><p class="section-note">A pocket field guide to a few remarkable neighbours in our universe.</p></div>
+      <div class="filters"><input id="search" type="search" placeholder="Search celestial objects..." aria-label="Search objects"><div id="filterButtons" class="filter-buttons"><button class="filter active" data-filter="all">All objects</button><button class="filter" data-filter="planet">Planets</button><button class="filter" data-filter="star">Stars</button><button class="filter" data-filter="deep">Deep sky</button></div></div>
+      <div id="objectGrid" class="object-grid"></div>
+      <p class="small-note">Select any object to open its field note. Information is a concise educational introduction.</p>
+    </section>
+    <section class="section planner-section" id="planner">
+      <div class="section-heading"><div><p class="eyebrow">02 — YOUR NEXT EVENING</p><h2>Make room for <em>wonder.</em></h2></div><p class="section-note">A simple checklist to help you prepare for an observing session.</p></div>
+      <div class="planner-card"><div><label for="observeDate">Choose your observing date</label><input type="date" id="observeDate"><p class="muted">Pick a date and create a beginner-friendly preparation list.</p><button class="gold-button" id="makePlan">Create my checklist</button></div><div class="checklist-wrap"><h3 id="planTitle">Your field checklist</h3><ul id="checklist"><li class="empty">Your checklist will appear here.</li></ul></div></div>
+    </section>
+    <section class="section moon-section" id="moon">
+      <div class="moon-copy"><p class="eyebrow">03 — LUNAR OBSERVATIONS</p><h2>Follow the<br><em>Moon.</em></h2><p>The Moon changes its appearance throughout the month. Choose a date to see an approximate phase and illuminated fraction.</p><label for="moonDate">Date of interest</label><input type="date" id="moonDate"></div>
+      <div class="moon-display"><div class="moon-disc" id="moonDisc"><div class="moon-shadow" id="moonShadow"></div></div><p class="moon-phase" id="moonPhase">Waxing crescent</p><p class="moon-percent" id="moonPercent">— % illuminated</p><p class="small-note">Educational approximation; not an astronomical ephemeris.</p></div>
+    </section>
+    <section class="section journal-section" id="journal">
+      <div class="section-heading"><div><p class="eyebrow">04 — THE OBSERVER'S LOG</p><h2>Keep what you <em>find.</em></h2></div><p class="section-note">Save a small note from your night. Entries stay in this browser.</p></div>
+      <form id="journalForm" class="journal-form"><input id="entryTitle" maxlength="60" placeholder="A title for this observation" required><textarea id="entryText" rows="3" maxlength="500" placeholder="What did you notice? What would you like to remember?" required></textarea><button class="gold-button" type="submit">Save observation</button></form>
+      <div id="journalEntries" class="journal-entries"></div>
+    </section>
+  </main>
+  <footer><span>THE NIGHT OBSERVATORY</span><span>MADE FOR THE CURIOUS · 2026</span></footer>
+  <dialog id="objectDialog"><button class="dialog-close" id="closeDialog" aria-label="Close">×</button><p class="eyebrow">FIELD NOTE</p><h2 id="dialogTitle"></h2><p id="dialogType" class="dialog-type"></p><p id="dialogDescription"></p></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
